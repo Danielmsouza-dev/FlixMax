@@ -1,0 +1,169 @@
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 30% 10%, #0f0f0f, #000000);
+}
+
+.carouselTrack {
+  width: 400px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carouselItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.profileItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-premium);
+  position: relative;
+}
+
+.avatarWrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: border 0.2s;
+}
+
+.profileItem:hover .avatar {
+  border-color: var(--color-red);
+}
+
+.glowRing {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(229,9,20,0.6), transparent);
+  opacity: 0.6;
+  filter: blur(8px);
+}
+
+.profileName {
+  margin-top: var(--space-md);
+  font-weight: 500;
+  font-size: var(--font-size-lg);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.addButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-red);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+  transition: all 0.2s;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.deleteBtn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #222;
+  color: #ff4d4d;
+  font-weight: bold;
+  border: 1px solid rgba(255,255,255,0.3);
+  font-size: 1rem;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.modal {
+  background: #111;
+  padding: 2rem;
+  border-radius: 32px;
+  width: 90%;
+  max-width: 460px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 25px 40px -12px black;
+}
+
+.modal h2 {
+  margin-bottom: 1.5rem;
+}
+
+.modalInput {
+  width: 100%;
+  padding: 1rem;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 12px;
+  color: white;
+}
+
+.avatarSelector {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  justify-content: center;
+}
+
+.avatarOption {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.selectedAvatar {
+  border-color: var(--color-red);
+  transform: scale(1.1);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.modalActions button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 40px;
+  background: #333;
+  color: white;
+}
+.modalActions button:last-child {
+  background: var(--color-red);
+}

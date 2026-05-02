@@ -1,0 +1,35 @@
+.container {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #1a1a1a, #000000);
+}
+
+.logo {
+  display: flex;
+  gap: 0.125rem;
+  font-size: 6rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  filter: drop-shadow(0 0 20px rgba(229, 9, 20, 0.5));
+}
+
+.f {
+  color: var(--color-white);
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.8);
+}
+
+.x {
+  color: var(--color-red);
+}
+
+.glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(229,9,20,0.3), transparent 70%);
+  border-radius: 50%;
+  filter: blur(20px);
+}

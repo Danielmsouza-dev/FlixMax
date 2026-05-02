@@ -1,0 +1,108 @@
+.container {
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.leftSide {
+  flex: 1.2;
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=2450&auto=format')
+    center/cover no-repeat;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.8) 100%);
+  mix-blend-mode: multiply;
+}
+
+.rightSide {
+  flex: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-black);
+  padding: var(--space-xl);
+}
+
+.glassCard {
+  background: rgba(20, 20, 20, 0.65);
+  backdrop-filter: blur(16px);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 45px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  padding: var(--space-2xl);
+  width: 100%;
+  max-width: 460px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-sm);
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background: rgba(51, 51, 51, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: white;
+  transition: all var(--duration-fast) var(--ease-premium);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-red);
+  box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.3);
+  background: rgba(20, 20, 20, 0.9);
+}
+
+.button {
+  width: 100%;
+  background: var(--color-red);
+  color: white;
+  padding: 1rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all var(--duration-base) var(--ease-premium);
+}
+
+.button:hover {
+  background: #f40612;
+  transform: scale(0.98);
+}
+
+.switchText {
+  text-align: center;
+  color: var(--color-gray-300);
+}
+
+.switchButton {
+  color: var(--color-white);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.switchButton:hover {
+  border-bottom-color: var(--color-red);
+}
