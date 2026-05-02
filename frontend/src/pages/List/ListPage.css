@@ -1,0 +1,17 @@
+.list-page {
+  padding: 2rem;
+}
+.list-page h1 {
+  margin-bottom: 1.5rem;
+}
+.list-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+}
+@media (max-width: 768px) {
+  .list-grid {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,77 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+}
+.modal-backdrop {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+.modal-info {
+  padding: 1.5rem;
+}
+.modal-info h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+.modal-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.btn-assistir, .btn-lista {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.btn-assistir { background: #e50914; color: white; }
+.btn-lista { background: #333; color: white; }
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: black;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trailer-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+.btn-fechar-trailer {
+  display: block;
+  margin: 1rem auto;
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 40px;
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+# Dependências
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+# Cache de build e logs
+dist/
+backend/dist/
+frontend/dist/
+.vite/
+*.log
+npm-debug.log*
+
+# Banco de dados SQLite (opcional: se quiser versionar o banco, remova a linha abaixo)
+backend/flixmax.db
+backend/flixmax.db-journal
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# IDE e sistema
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Relatórios de cobertura
+coverage/
+.nyc_output/
+
+# Arquivos temporários do Node
+.tmp/
+.cache/

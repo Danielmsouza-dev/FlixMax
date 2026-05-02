@@ -1,0 +1,6 @@
+:root {
+  --color-black: #0b0b0b;
+  --color-red: #e50914;
+  --color-white: #ffffff;
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}

@@ -1,0 +1,48 @@
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+.menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100%;
+  background: rgba(20,20,20,0.95);
+  backdrop-filter: blur(12px);
+  z-index: 1001;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.5);
+}
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.menu-links {
+  list-style: none;
+  padding: 0;
+}
+.menu-links li {
+  margin: 1.5rem 0;
+}
+.menu-links a, .switch-profile-btn {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: color 0.2s;
+}
+.menu-links a:hover, .switch-profile-btn:hover { color: #e50914; }
