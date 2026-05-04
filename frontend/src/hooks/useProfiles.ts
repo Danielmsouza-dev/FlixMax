@@ -1,21 +1,42 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
-import axios from 'axios';
-
-const api = axios.create({ baseURL: '/api' });
+import { useState, useEffect, useCallback } from 'react';
+import { profileApi, Profile } from '../services/api';
 
 export function useProfiles() {
-  const [profiles, setProfiles] = useState<any[]>([]);
+  const [profiles, setProfiles] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
-  const isAdding = useRef(false);
+  const [error, setError] = useState<string | null>(null);
 
   const fetchProfiles = useCallback(async () => {
     try {
-      const res = await api.get('/profiles');
+      setLoading(true);
+      const res = await profileApi.getAll();
       setProfiles(res.data);
-    } catch (err) {
-      console.error(err);
+      setError(null);
+    } catch (err: any) {
+      setError(err.message);
     } finally {
       setLoading(false);
+    }
+  }, []);
+
+  const addProfile = useCallback(async (name: string, avatar: string) => {
+    try {
+      const res = await profileApi.create(name, avatar);
+      setProfiles(prev => [...prev, res.data]);
+      return true;
+    } catch (err: any) {
+      setError(err.response?.data?.error || err.message);
+      return false;
+    }
+  }, []);
+
+  const deleteProfile = useCallback(async (id: number) => {
+    try {
+      await profileApi.delete(id);
+      setProfiles(prev => prev.filter(p => p.id !== id));
+      return true;
+    } catch (err) {
+      return false;
     }
   }, []);
 
@@ -23,31 +44,5 @@ export function useProfiles() {
     fetchProfiles();
   }, [fetchProfiles]);
 
-  const addProfile = async (name: string, avatar: string) => {
-    if (isAdding.current) return false;
-    isAdding.current = true;
-    try {
-      const res = await api.post('/profiles', { name, avatar });
-      setProfiles(prev => [...prev, res.data]);
-      return true;
-    } catch (err: any) {
-      alert(err.response?.data?.error || 'Erro ao adicionar');
-      return false;
-    } finally {
-      isAdding.current = false;
-    }
-  };
-
-  const deleteProfile = async (id: number) => {
-    try {
-      await api.delete(`/profiles/${id}`);
-      setProfiles(prev => prev.filter(p => p.id !== id));
-      return true;
-    } catch (err: any) {
-      alert('Erro ao deletar');
-      return false;
-    }
-  };
-
-  return { profiles, loading, addProfile, deleteProfile, refetch: fetchProfiles };
+  return { profiles, loading, error, addProfile, deleteProfile, refetch: fetchProfiles };
 }

@@ -1,2 +1,9 @@
 import Login from '../components/Login/Login';
-export default function LoginPage({ onLogin }: { onLogin: () => void }) { return <Login onLogin={onLogin} />; }
+
+interface Props {
+  onLogin: () => void;
+}
+
+export default function LoginPage({ onLogin }: Props) {
+  return <Login onLogin={onLogin} />;
+}
